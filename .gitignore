@@ -1,0 +1,71 @@
+# ===========================================
+# SECURITY: Never commit these files
+# ===========================================
+
+# HMAC secret key (used for audit log hashing)
+.gatekeeper-secret
+**/.gatekeeper-secret
+
+# Sender registry (contains phone numbers, user IDs)
+sender-registry.json
+**/sender-registry.json
+
+# Lock files (runtime state)
+*.lock
+**/*.lock
+
+# Audit logs (may contain sensitive metadata)
+*-audit.log
+**/*-audit.log
+gatekeeper-audit.log
+
+# Real config files (may contain tokens)
+# Only commit *.example files
+openclaw.json
+clawdbot.json
+
+# ===========================================
+# Development artifacts
+# ===========================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

@@ -1,0 +1,31 @@
+{
+  "gateway": {
+    "mode": "local",
+    "bind": "loopback",
+    "port": "<PORT>",
+    "controlUi": {
+      "allowInsecureAuth": false,
+      "dangerouslyDisableDeviceAuth": false
+    },
+    "auth": {
+      "mode": "token",
+      "token": "<GENERATE_SECURE_TOKEN>"
+    }
+  },
+  "channels": {
+    "imessage": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist"
+    },
+    "whatsapp": {
+      "enabled": false
+    },
+    "telegram": {
+      "enabled": false
+    },
+    "signal": {
+      "enabled": false
+    }
+  }
+}

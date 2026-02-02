@@ -1,0 +1,22 @@
+#!/bin/bash
+# Message Gatekeeper CLI
+# Zero-trust sender validation for messaging platforms
+#
+# Environment Variables:
+#   GATEKEEPER_BASE_DIR     Base directory for data files
+#   GATEKEEPER_REGISTRY     Path to sender registry
+#   GATEKEEPER_AUDIT_LOG    Path to audit log
+#   GATEKEEPER_SECRET       Path to HMAC secret
+#   GATEKEEPER_EXPIRY_HOURS Pairing code expiry (default: 24)
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Look for the Python module in common locations
+if [[ -f "$SCRIPT_DIR/../src/message_gatekeeper.py" ]]; then
+    exec python3 "$SCRIPT_DIR/../src/message_gatekeeper.py" "$@"
+elif [[ -f "$SCRIPT_DIR/message_gatekeeper.py" ]]; then
+    exec python3 "$SCRIPT_DIR/message_gatekeeper.py" "$@"
+else
+    echo "Error: message_gatekeeper.py not found" >&2
+    exit 1
+fi
