@@ -2,6 +2,10 @@
 
 A **practical security baseline** for running messaging automation safely on personal devices, home labs, and small business environments.
 
+<p align="center">
+  <img src="assets/openclaw.png" alt="OpenClaw Security" width="400">
+</p>
+
 ## What This Solves
 
 Messaging bots connected to platforms like iMessage, WhatsApp, Telegram, and Signal face real risks:
